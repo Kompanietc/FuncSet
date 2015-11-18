@@ -3,17 +3,17 @@
 import static org.junit.Assert.*;
 
 /**
- * Created by admin on 29.10.15.
+ * Простейший тест
  */
 public class CountSymbolsTest {
 
     @Test
     public void testCountSymbols() throws Exception {
-        String str = "aaaaaa";
+        String str = "a";
         char symb = 'a';
-        int _count = 6;
+        int result = 1;
 
-        assertEquals(_count,CountSymbols.count(str,symb));
+        assertEquals(result,CountSymbols.count(str,symb));
 
     }
 }
