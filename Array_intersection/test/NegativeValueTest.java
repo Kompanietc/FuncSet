@@ -1,9 +1,9 @@
-import org.junit.Test;
+﻿import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- * Created by ��������� on 18.11.2015.
+ * Тест с отрицательными значениями
  */
 public class NegativeValueTest {
 

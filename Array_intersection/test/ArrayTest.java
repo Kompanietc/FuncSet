@@ -1,7 +1,7 @@
-import static org.junit.Assert.assertArrayEquals;
+ï»¿import static org.junit.Assert.assertArrayEquals;
 
 /**
- * Created by Êîìïàíèåö on 17.10.2015.
+ * Created by ĞšĞ¾Ğ¼Ğ¿Ğ°Ğ½Ğ¸ĞµÑ† on 17.10.2015.
  */
 public class ArrayTest {
 

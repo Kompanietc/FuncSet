@@ -1,9 +1,9 @@
-import org.junit.Test;
+п»їimport org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- * Больше знаков после запятой
+ * Р‘РѕР»СЊС€Рµ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
  */
 public class SecondArrayTest {
 
