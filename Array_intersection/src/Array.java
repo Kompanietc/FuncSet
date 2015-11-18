@@ -1,88 +1,55 @@
-﻿/**
- * Пересечение двух массивов
+/**
+ * ������� � ������� ����������� ����������� ���� ��������
  */
-public class Array {
-    int n;
-    double [] A;
-    double eps = 0.000001;
+public final class Array {
+    public static void print(double []arrayToPrint){
+        for (int i = 0; i< arrayToPrint.length; i++){
 
-    public Array(int _n){
-
-
-        n = _n;
-        A = new double[n];
-    }
-
-    public Array(double[]a){
-        n = a.length;
-
-        A = a;
-    }
-
-    /**
-     * Сравнение двух массивов для тестовой функции
-     */
-    public boolean compare(Array m1){
-
-        if (Math.abs(m1.n - this.n ) > eps)
-            return false;
-        else{
-            for (int i = 0; i < n; i++) {
-
-                if (this.A[i] != m1.A[i])
-                    return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Вывод массива
-     */
-    public void print(){
-        for (int i = 0; i< n; i++){
-
-            System.out.print(A[i]);
+            System.out.print(arrayToPrint[i]);
             System.out.print("\t");
-
-
-
         }
         System.out.println();
         System.out.println();
     }
+    public static double[] resize(double[] arrayToResize, int newLength){
+        double[] result =new double[newLength];
+        int min;
 
-    /**
-     * функция для определения пересечения двух массивов
-     */
-    public void intersection(Array a, Array b){
+        if(arrayToResize.length < newLength)
+            min = arrayToResize.length;
+        else min = newLength;
+
+        for (int j=0;j<min;j++)
+            result[j] = arrayToResize[j];
+        if (min < newLength)
+            for(int j=min;j < newLength;j++)
+                result[j] = 0;
+        return result;
+    }
+    public static double[] intersection(double [] firstArray, double [] secondArray){
         int k = 0;
         int count = 0;
-
-        for (int i = 0; i < a.A.length; i++){
+        int size = 0;
+        double eps = 0.000001;
+        double [] res = new double[firstArray.length];
+        for (int i = 0; i < firstArray.length; i++){
             boolean fl = false;
 
             for (int p = 0; p < i; p++) {
-                if (Math.abs(a.A[i] - a.A[p]) < eps)
+                if (Math.abs(firstArray[i] - firstArray[p]) < eps)
                     fl = true;
             }
             if(!fl) {
-                for (int j = 0; j < b.A.length; j++)
-                    if (Math.abs(a.A[i] - b.A[j] ) < eps) {
-                        A[k] = a.A[i];
+                for (int j = 0; j < secondArray.length; j++)
+                    if (Math.abs(firstArray[i] - secondArray[j] ) < eps) {
+                        res[k] = firstArray[i];
                         k++;
                         count++;
                         break;
                     }
             }
         }
-        n = count;
-    }
-
-    /**
-     * Возврат матрицы из экземпляра класса Matrix
-     */
-    public double[] getMassive (){
-        return A;
+        size = count;
+        return Array.resize(res, size);
     }
 }

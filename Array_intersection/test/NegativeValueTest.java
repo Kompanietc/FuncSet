@@ -1,18 +1,19 @@
+import org.junit.Test;
+
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- * Created by Компаниец on 17.10.2015.
+ * Created by Компаниец on 18.11.2015.
  */
-public class ArrayTest {
+public class NegativeValueTest {
 
-    @org.junit.Test
+    @Test
     public void testIntersection() throws Exception {
         double eps = 0.000001;
-        double firstArray [] = {1,2,3,4,0,20.2233};//massive n
-        double secondArray [] = {5,1,2,0,20.2234};//massive m
-        double resualtArray [] = {1,2,0};
+        double firstArray [] = {-1,-2,-3};//massive n
+        double secondArray [] = {-1,-2,0};//massive m
+        double resualtArray [] = {-1,-2};
         Array.print(Array.intersection(firstArray,secondArray));
         assertArrayEquals(resualtArray, Array.intersection(firstArray, secondArray),eps);
-
     }
 }
